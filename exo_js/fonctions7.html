@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        let gender = 'femme';
+        let annee = 18;
+
+        function truc(age, genre){
+            if(age >= 18 && genre == 'homme'){
+                document.write('Vous êtes un homme et vous êtes majeur');
+            }
+
+            else if(age < 18 && genre == 'homme'){
+                document.write('Vous êtes un homme et vous êtes mineur');
+            }
+            else if(age >= 18 && genre == 'femme'){
+                document.write('Vous êtes une femme et vous êtes majeure');
+            }
+            else if(age < 18 && genre == 'femme'){
+                document.write('Vous êtes une femme et vous êtes mineure');
+            }
+        }
+
+        document.write(truc(annee, gender));
+
+    </script>
+</body>
+</html>
