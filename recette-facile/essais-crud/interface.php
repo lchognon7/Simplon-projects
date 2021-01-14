@@ -4,8 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        img{
+            float:right;
+            width:15%;
+        }
+    </style>
 </head>
 <body>
+    <img src="recipe-book.png" alt="icone livre de recettes et ustensile">
     <h1>Rechercher une recette par hashtag</h1>
     <form action="crudrecettes.php" method="POST">
         <input type="text" name="rechercher" placeholder="Quel hashtag souhaitez vous chercher ?">
