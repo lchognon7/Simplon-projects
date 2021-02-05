@@ -1,0 +1,158 @@
+@font-face{
+    font-family:'stay_homeregular';
+    src: url("STAYHOME.otf");
+    src: url('stayhome-webfont.woff2') format('woff2'),
+         url('stayhome-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body{
+    background-color:#393E46;
+    color:#ffd369;
+    display:grid;
+    grid-template-columns: 50% 50%;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    margin:0;
+    padding:0;
+    align-items:center;
+}
+
+.enfant1{
+    grid-column:1/2;
+    width:100%;
+    text-align:center;
+    margin-bottom:15vh;
+}
+
+.enfant2{
+    grid-column:2/3;
+    grid-row:1/3;
+    z-index:1;
+}
+
+.mentions{
+    grid-column:1/2;
+    color:#ffd369;
+    text-align:right;
+    font-size:11px;
+}
+
+.confidentiel{
+    grid-column: 2/3;
+    grid-row:2/3;
+    z-index:2;
+    color:#EEEEEE;
+    font-size:11px;
+}
+
+img{
+    height:100vh;
+    width:100%;
+}
+
+.bouton{
+    margin-top:5%;
+    text-align:center;
+    border: 1.6px dashed #ffd369;
+    cursor:pointer;
+    padding:15px 70px;
+    letter-spacing:1.2px;
+    font-weight:300;
+    outline:none; 
+    background:#ffd369;
+    border-radius:5%;
+}
+
+.bouton:hover{
+    background:transparent;
+    color:#ffd369;
+}
+
+.formulaire{
+    width:32vw;
+    margin-bottom:20px;
+    height:7vh;
+}
+
+h1{
+    letter-spacing:2px;
+    font-family:'stay_homeregular';
+    font-size: 14vh;
+    font-weight:400;
+    margin-bottom:0px;
+}
+
+h2{
+    letter-spacing:1.5px;
+    font-weight:300;
+    font-size:2.2vh;
+    margin-bottom:50px;
+}
+
+.gris{
+    color:#EEEEEE;
+}
+
+a{
+    text-decoration:none;
+    color:#ffd369;
+}
+
+.bouton_mobile{
+    display:none;
+}
+
+@media screen and (max-width:600px){
+    body{
+        display:grid;
+        grid-template-columns: 99.9vw 0.1vw;
+        grid-template-rows:90vh 5vh 5vh;
+    }
+
+    .enfant1{
+        grid-column:1/2;
+        grid-row:1/2;
+    }
+
+    .enfant2{
+        grid-column:2/3;
+    }
+
+    .mentions{
+        grid-column:1/2;
+        grid-row:2/3;
+        text-align:center;
+    }
+
+    .confidentiel{
+        grid-column:1/2;
+        grid-row:3/4;
+        text-align:center;
+    }
+
+    .bouton{
+        display:none;
+    }
+
+    .bouton_mobile{
+        display:block;
+        margin:auto;
+        background-color:#ffd369;
+        background-image:url('loupe.svg');
+        background-repeat:no-repeat;
+        background-position:center;
+        background-size:35px;
+        border: 2px dotted #393E46;
+        outline:none; 
+        width:90px;
+        height:90px;
+        border-radius:50%;
+        margin-top:20px;
+    }
+
+    .formulaire{
+        width:80vw;
+    }
+}
