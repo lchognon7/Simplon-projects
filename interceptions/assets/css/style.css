@@ -1,0 +1,532 @@
+/*
+
+Global
+
+*/
+
+:root {
+  --colorBackground: #042c2f;
+  --colorForeground: #01aeb9;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  :root {
+    scroll-behavior: smooth;
+  }
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+}
+
+html {
+  font-size: 62.5%;
+}
+
+::selection {
+  background-color: var(--colorForeground);
+  color: var(--colorBackground);
+  text-shadow: none;
+}
+
+body {
+  background-color: var(--colorBackground);
+  color: var(--colorForeground);
+  font-family: system-ui, Ubuntu, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-weight: 400;
+  line-height: 1.3125;
+  line-height: calc(1ex / 0.32);
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  font-size: 2.3rem;
+}
+
+@media (max-width: 767.98px) {
+  body {
+    font-size: 2.1rem;
+  }
+}
+
+@media (min-width: 768px) {
+  body {
+    font-size: 2.3rem;
+  }
+}
+
+a:not([class]) {
+  color: inherit;
+}
+
+a:active {
+  outline: none;
+}
+
+/*
+
+Helpers
+
+*/
+
+@media (max-width: 767.98px) {
+  .desktop {
+    display: none;
+  }
+}
+@media (min-width: 768px) {
+  .mobile {
+    display: none;
+  }
+}
+
+.button {
+  display: block;
+  padding: 1rem 4rem;
+  border-radius: .5rem;
+  background: var(--colorForeground);
+  color: var(--colorBackground);
+  border: .3rem solid transparent;
+  opacity: .85;
+  text-decoration: none;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.button:hover {
+  opacity: 1;
+}
+
+.button:active {
+  opacity: .5;
+  transform: translateY(.2rem);
+}
+
+.text-center {
+  text-align: center;
+}
+
+/*
+
+Tables
+
+*/
+
+table {
+  border-collapse: collapse;
+}
+
+@media (max-width: 767.98px) {
+  table {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  tr:hover{
+    filter: brightness(1.25);
+  }
+}
+
+td, th {
+  border: .1rem solid var(--colorForeground);
+}
+
+@media (max-width: 767.98px) {
+  td, th {
+    padding: .3rem 1rem;
+  }
+  table svg {
+    height: 2rem;
+    vertical-align: text-top;
+    fill: var(--colorForeground);
+  }
+}
+
+@media (min-width: 768px) {
+  td, th {
+    padding: 1rem 2rem;
+  }
+  table svg {
+    height: 2.5rem;
+    vertical-align: text-top;
+    fill: var(--colorForeground);
+  }
+}
+
+table a {
+  outline: none;
+}
+
+table a svg {
+  opacity: .8;
+  pointer-events: none; /* OMG, that thing prevents SVG from being the JS event's target */
+}
+
+table a:hover svg {
+  opacity: 1;
+}
+
+table a:active svg {
+  opacity: .5;
+}
+
+/*
+
+Layout : Homepage
+A rough & fake homepage design example.
+
+*/
+
+body.layout-homepage {
+  --colorBackground: #0f0f0f;
+  --colorForeground: #fcfcfc;
+  display: grid;
+  place-items: center;
+  margin: 0;
+  padding: 2rem;
+  min-height: 100vh;
+  text-align: center;
+}
+
+/*
+
+Layout : Center
+Displaying everything on the center of the viewport, mobile & desktop.
+
+*/
+
+body.layout-center {
+  display: grid;
+  place-items: center;
+  margin: 0;
+  min-height: 100vh;
+}
+
+@media (max-width: 767.98px) {
+  body.layout-center {
+    padding: 1rem;
+  }
+}
+
+@media (min-width: 768px) {
+  body.layout-center main {
+    max-width: 60rem;
+  }
+}
+
+body.layout-center input {
+  width: 100%;
+  background: var(--colorBackground);
+  color: inherit;
+  font: inherit;
+  padding: 1rem;
+}
+
+body.layout-center [type="email"],
+body.layout-center [type="password"] {
+  border-radius: .5rem;
+  margin-bottom: 2rem;
+  border: .3rem solid var(--colorForeground);
+  box-shadow: none;
+  outline: none;
+  transition: box-shadow 400ms;
+}
+
+body.layout-center [type="email"]:focus,
+body.layout-center [type="password"]:focus {
+  box-shadow: 0 0 .8rem var(--colorForeground),
+        inset 0 0 .8rem var(--colorForeground);
+}
+
+body.layout-center [type="submit"] {
+  border-radius: .5rem;
+  background: var(--colorForeground);
+  color: var(--colorBackground);
+  border: .3rem solid transparent;
+  cursor: pointer;
+  opacity: .85;
+}
+
+body.layout-center [type="submit"]:hover {
+  opacity: 1;
+}
+
+body.layout-center [type="submit"]:active {
+  transform: translateY(.2rem);
+}
+
+/*
+
+Addon : Menu
+Brings menu to life with no dependancies or JavaScript.
+
+*/
+
+body.addon-menu header {
+  z-index: 1;
+}
+
+@media (max-width: 767.98px) {
+  body.addon-menu header,
+  body.addon-menu nav#menu a.menu-close {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+  }
+}
+
+@media (min-width: 768px) {
+  body.addon-menu header,
+  body.addon-menu nav#menu a.menu-close {
+    position: fixed;
+    top: 0;
+    right: 0;
+  }
+}
+
+body.addon-menu header a,
+body.addon-menu nav#menu a.menu-close {
+  padding: 1rem;
+  display: grid;
+  place-content: center;
+  opacity: .85;
+}
+
+body.addon-menu header a {
+  fill: var(--colorForeground);
+  background-color: var(--colorBackground);
+}
+
+body.addon-menu header a:hover,
+body.addon-menu nav#menu a.menu-close:hover {
+  opacity: 1;
+}
+
+body.addon-menu header a:active,
+body.addon-menu nav#menu a.menu-close:active {
+  opacity: .5;
+}
+
+body.addon-menu header a svg,
+body.addon-menu nav#menu a.menu-close svg {
+  width: 5rem;
+}
+
+body.addon-menu nav#menu {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: var(--colorForeground);
+  color: var(--colorBackground);
+  z-index: 666;
+}
+
+@media (max-width: 767.98px) {
+  body.addon-menu nav#menu:target {
+    display: grid;
+    align-items: center;
+  }
+
+  body.addon-menu nav#menu ul {
+    list-style: none;
+    text-align: center;
+    display: grid;
+    grid-gap: 5vh;
+    padding: 5vh;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  }
+
+  body.addon-menu nav#menu ul li a {
+    display: block;
+    background-color: var(--colorBackground);
+    color: var(--colorForeground);
+    text-decoration: none;
+    padding: 5vh;
+    opacity: .85;
+    border-radius: .5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  body.addon-menu nav#menu:target {
+    display: grid;
+    align-items: center;
+  }
+
+  body.addon-menu nav#menu ul {
+    list-style: none;
+    text-align: center;
+    display: grid;
+    grid-gap: 10vh;
+    padding: 10vh;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  }
+
+  body.addon-menu nav#menu ul li a {
+    display: block;
+    background-color: var(--colorBackground);
+    color: var(--colorForeground);
+    text-decoration: none;
+    padding: 3vw;
+    opacity: .85;
+    border-radius: .5rem;
+  }
+}
+
+body.addon-menu nav#menu ul li a:hover {
+  opacity: 1;
+}
+
+body.addon-menu nav#menu ul li a:active {
+  opacity: .5;
+}
+
+body.addon-menu nav#menu a.menu-close {
+  background-color: var(--colorForeground);
+  fill: var(--colorBackground);
+  z-index: 667;
+}
+
+/*
+
+Addon : alerts
+Brings cool alerts to life with no dependancies or JavaScript.
+
+*/
+
+body.addon-alert .alert {
+  display: none;
+  border: .3rem dashed var(--colorForeground);
+  text-align: center;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+body.addon-alert .alert.fail:target {
+  display: block;
+  -webkit-animation-name: shakeX;
+  animation-name: shakeX;
+}
+
+body.addon-alert .alert.success:target {
+  display: block;
+  -webkit-animation-name: shakeY;
+  animation-name: shakeY;
+}
+
+/*
+
+Animations
+via Animate.css v4.1.1 | MIT license | https://animate.style
+
+*/
+
+@-webkit-keyframes shakeX {
+  from,
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    -webkit-transform: translate3d(-10px, 0, 0);
+    transform: translate3d(-10px, 0, 0);
+  }
+
+  20%,
+  40%,
+  60%,
+  80% {
+    -webkit-transform: translate3d(10px, 0, 0);
+    transform: translate3d(10px, 0, 0);
+  }
+}
+
+@keyframes shakeX {
+  from,
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    -webkit-transform: translate3d(-10px, 0, 0);
+    transform: translate3d(-10px, 0, 0);
+  }
+
+  20%,
+  40%,
+  60%,
+  80% {
+    -webkit-transform: translate3d(10px, 0, 0);
+    transform: translate3d(10px, 0, 0);
+  }
+}
+
+@-webkit-keyframes shakeY {
+  from,
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    -webkit-transform: translate3d(0, -10px, 0);
+    transform: translate3d(0, -10px, 0);
+  }
+
+  20%,
+  40%,
+  60%,
+  80% {
+    -webkit-transform: translate3d(0, 10px, 0);
+    transform: translate3d(0, 10px, 0);
+  }
+}
+@keyframes shakeY {
+  from,
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    -webkit-transform: translate3d(0, -10px, 0);
+    transform: translate3d(0, -10px, 0);
+  }
+
+  20%,
+  40%,
+  60%,
+  80% {
+    -webkit-transform: translate3d(0, 10px, 0);
+    transform: translate3d(0, 10px, 0);
+  }
+}
