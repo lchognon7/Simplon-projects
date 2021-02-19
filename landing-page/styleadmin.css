@@ -1,0 +1,265 @@
+body{
+    background-color: #5B5B5B;
+    display:grid;
+    grid-template-columns: 30vw 70vw;
+    grid-template-rows: 14vh 14vh 14vh 14vh 14vh 14vh 14vh;
+    text-align:center;
+    overflow-y:hidden;
+    overflow-x:hidden;
+}
+
+.presentation\>\<form{
+    grid-column:2/3;
+    grid-row:2/8;
+    align-self:center;
+}
+
+.presentation-btn{
+    grid-column:1/2;
+    grid-row:2/3;
+    justify-self:left;
+    
+}
+
+.presentation\>\<form > input:nth-child(1){
+    margin:10px;
+}
+
+.presentation\>\<form > input:nth-child(2){
+    margin:10px;
+}
+
+
+.presentation-btn > form:nth-child(1) > input:nth-child(1){
+    background-image: linear-gradient(to right, #C04848 0%, #480048  51%, #C04848  100%);
+    margin: 10px;
+    padding: 8px 60px;
+    text-align: center;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: rgb(242, 218, 218);            
+    border-radius: 5px;
+    cursor:pointer;
+}
+
+.presentation-btn > form:nth-child(1) > input:nth-child(1):hover {
+    background-position: right center; 
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .submit_phrase, .submit_bg, .submit_color, .submit_titre, .submit_desc{
+    background-image:url('edit.png');
+    background-repeat:no-repeat;
+    background-position:center;
+    background-size:20px;
+    width:50px;
+    height:50px;
+    border-radius:10px;
+    cursor:pointer;
+    margin-top:30px;
+    }
+
+  .submit_liens{
+    background-image:url('edit.png');
+    background-repeat:no-repeat;
+    background-position:center;
+    background-size:20px;
+    width:40px;
+    height:40px;
+    border-radius:10px;
+    cursor:pointer;
+    margin-left:30px;
+  }
+
+  .submit_suppr{
+    background-image:url('delete.png');
+    background-repeat:no-repeat;
+    background-position:center;
+    background-size:20px;
+    width:40px;
+    height:40px;
+    border-radius:10px;
+    cursor:pointer;
+    margin-left:30px;
+  }
+
+.bgcolor{
+    grid-column:2/3;
+    grid-row:2/8;
+    align-self:center;
+}
+
+.bgcolor-btn{
+    grid-column:1/2;
+    grid-row:3/4;
+    justify-self:left;
+}
+
+.bgcolor-btn > form:nth-child(1) > input:nth-child(1){
+    background-image: linear-gradient(to right, #C04848 0%, #480048  51%, #C04848  100%);
+    margin: 10px;
+    padding: 8px 60px;
+    text-align: center;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: rgb(242, 218, 218);            
+    border-radius: 5px;
+    cursor:pointer;
+}
+
+.bgcolor-btn > form:nth-child(1) > input:nth-child(1):hover {
+    background-position: right center; 
+    color: #fff;
+    text-decoration: none;
+  }
+
+.textcolor{
+    grid-column:2/3;
+    grid-row:2/8;
+    align-self:center;
+}
+
+.textcolor-btn{
+    grid-column:1/2;
+    grid-row:4/5;
+    justify-self:left;
+}
+
+.textcolor-btn > form:nth-child(1) > input:nth-child(1){
+    background-image: linear-gradient(to right, #C04848 0%, #480048  51%, #C04848  100%);
+    margin: 10px;
+    padding: 8px 54px;
+    text-align: center;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: rgb(242, 218, 218);            
+    border-radius: 5px;
+    cursor:pointer;
+}
+
+.textcolor-btn > form:nth-child(1) > input:nth-child(1):hover {
+    background-position: right center; 
+    color: #fff;
+    text-decoration: none;
+  }
+
+.liens{
+    grid-column:2/3;
+    grid-row:2/8;
+    align-self:center;
+}
+
+.liens-btn{
+    grid-column:1/2;
+    grid-row:5/6;
+    justify-self:left;
+}
+
+.liens-btn > form:nth-child(1) > input:nth-child(1){
+    background-image: linear-gradient(to right, #C04848 0%, #480048  51%, #C04848  100%);
+    margin: 10px;
+    padding: 8px 84px;
+    text-align: center;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: rgb(242, 218, 218);            
+    border-radius: 5px;
+    cursor:pointer;
+}
+
+.liens-btn > form:nth-child(1) > input:nth-child(1):hover {
+    background-position: right center; 
+    color: #fff;
+    text-decoration: none;
+  }
+
+.titre{
+    grid-column:2/3;
+    grid-row:2/8;
+    align-self:center;
+}
+
+.titre-btn{
+    grid-column:1/2;
+    grid-row:6/7;
+    justify-self:left;
+}
+
+.titre-btn > form:nth-child(1) > input:nth-child(1){
+    background-image: linear-gradient(to right, #C04848 0%, #480048  51%, #C04848  100%);
+    margin: 10px;
+    padding: 8px 84px;
+    text-align: center;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: rgb(242, 218, 218);            
+    border-radius: 5px;
+    cursor:pointer;
+}
+
+.titre-btn > form:nth-child(1) > input:nth-child(1):hover {
+    background-position: right center; 
+    color: #fff;
+    text-decoration: none;
+  }
+
+.description{
+    grid-column:2/3;
+    grid-row:2/8;
+    align-self:center;
+}
+
+.description-btn{
+    grid-column:1/2;
+    grid-row:7/8;
+    justify-self:left;
+}
+
+.description-btn > form:nth-child(1) > input:nth-child(1){
+    background-image: linear-gradient(to right, #C04848 0%, #480048  51%, #C04848  100%);
+    margin: 10px;
+    padding: 8px 65px;
+    text-align: center;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: rgb(242, 218, 218);            
+    border-radius: 5px;
+    cursor:pointer;
+}
+
+.description-btn > form:nth-child(1) > input:nth-child(1):hover {
+    background-position: right center; 
+    color: #fff;
+    text-decoration: none;
+  }
+
+.boutons{
+    grid-column:2/3;
+    grid-row:1/2;
+    justify-self:right;
+}
+
+.boutons > form:nth-child(1) > input:nth-child(1){
+    background-image: linear-gradient(to right, #C04848 0%, #480048  51%, #C04848  100%);
+    margin: 10px;
+    padding: 8px 20px;
+    text-align: center;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: rgb(242, 218, 218);            
+    border-radius: 5px;
+    cursor:pointer;
+}
+
+.boutons > form:nth-child(2) > input:nth-child(1){
+    background-image: linear-gradient(to right, #C04848 0%, #480048  51%, #C04848  100%);
+    margin: 10px;
+    padding: 8px 40px;
+    text-align: center;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: rgb(242, 218, 218);            
+    border-radius: 5px;
+    cursor:pointer;
+}
