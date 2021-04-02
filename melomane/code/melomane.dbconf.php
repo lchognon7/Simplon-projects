@@ -1,9 +1,9 @@
 <?php
 
   const DB_HOST    = "localhost";
-  const DB_NAME    = "melomane";
-  const DB_LOGIN   = "superuser";
-  const DB_PASS    = "ardècheVaincra!";
+  const DB_NAME    = "";
+  const DB_LOGIN   = "";
+  const DB_PASS    = "";
 
   const DB_DRIVER  = "mysql";
   const DB_CHARSET = "utf8mb4";
