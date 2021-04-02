@@ -1,0 +1,132 @@
+
+body{
+    margin:0;
+    padding:0;
+    display:grid;
+    grid-template-rows:8vh 42vh 50vh;
+    grid-template-columns:50vw 50vw;
+    background-image:url('5.jpg');
+    background-position:center;
+    background-repeat:no-repeat;
+    background-size:cover;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.recherche > form:nth-child(1) > select:nth-child(2){
+    width:150px;
+}
+
+.titre{
+    grid-column:1/2;
+    grid-row:2/3;
+    font-family: 'Train One', cursive;
+    color:white;
+    place-self:center;
+    font-size:59px;
+}
+
+h1{
+    font-size:70px;
+    font-weight: bold;
+}
+
+h2{
+    font-size:25px;
+    text-align:center;
+}
+
+.nav{
+    grid-column:1/2;
+    grid-row:1/2;
+    background-color:rgba(32,224,235,255);
+    margin-top:0;
+    border-bottom:solid 1px black;
+}
+
+.recherche{
+    grid-column:2/3;
+    grid-row:1/2;
+    background-color:rgba(32,224,235,255);
+    border-bottom:solid 1px black;
+    font-family: 'Roboto Mono', monospace;
+    font-size:11px;
+    padding-left:90px;
+    padding-top:15px;
+}
+
+.add_genre{
+    grid-column:2/3;
+    grid-row:2/3;
+    place-self:center;
+    padding:20px;
+    background-color:rgba(41, 44, 44, 0.692);
+    border-radius:10%;
+    color:white;
+    font-family: 'Roboto Mono', monospace;
+}
+
+
+.add_style{
+    grid-column:1/2;
+    grid-row:3/4;
+    place-self:center;
+    padding:20px;
+    background-color:rgba(44, 41, 41, 0.692);
+    border-radius:10%;
+    color:white;
+    font-family: 'Roboto Mono', monospace;
+}
+
+.add_artist{
+    grid-column:2/3;
+    grid-row:3/4;
+    place-self:center;
+    padding:20px;
+    background-color:rgba(44, 41, 41, 0.692);
+    border-radius:10%;
+    color:white;
+    font-family: 'Roboto Mono', monospace;
+}
+
+label{
+    margin-bottom:25px;
+}
+
+input{
+    margin-bottom:25px;
+}
+
+input[type=text]{
+    width:320px;
+}
+
+select{
+    margin-bottom:25px;
+}
+
+.nav > a{
+    font-family: 'Roboto Mono', monospace;
+    color: black;
+    font-size:20px;
+    margin-right:13px;
+    margin-left:20px;
+    padding-top:8px;
+    text-decoration:none;
+}
+
+.nav > a:hover{
+    background-color:rgba(255,130,52,255);
+    padding:4px;
+}
+
+a{
+    text-decoration:none;
+    color: rgba(32,224,235,255);
+    font-weight:bold;
+}
+
+a:hover{
+    color:white;
+}
+
