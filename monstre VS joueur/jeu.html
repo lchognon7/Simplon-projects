@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display:grid;
+            grid-template-columns:1fr 1fr;
+            place-items: center;
+        }
+
+        .monstre{
+            grid-column: 1/2;
+        }
+
+        .joueur{
+            grid-column:2/3;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="monstre">
+        <img src="monster.png" width=100px alt="">
+        <h1>Monstre</h1>
+        <button id="button_monstre">Attaquer</button>
+    </div>
+    <div class="joueur">
+        <img src="viking.png" width=100px alt="">
+        <h1>Joueur</h1>
+        <button id="button_joueur" disabled="true">Attaquer</button>
+    </div>
+
+    <script>
+
+        // on définit les points du joueur et du monstre à 20
+
+        let joueur = 20;
+        let monstre = 20;
+
+        // fonction qui permet d'obtenir un chiffre aléatoire en 1 et 6
+
+        function random(){
+            attaque_value = Math.floor(Math.random() * 6) + 1;
+            return attaque_value;
+        }
+
+        // fonction d'attaque qui sera déclenchée par le clic sur l'attaque du monstre 
+        // on passe la fonction créée random
+        // on enlève la valeur de cette fonction à la variable de score du joueur 
+        // on alerte le résultat dans une pop up
+        // on met un attribut disabled sur le bouton pour qu'on ne puisse pas jouer deux fois de suite 
+        // on enlève l'attribut disabled au joueur pour qu'il puisse jouer
+
+        function attaque_du_monstre(){
+            random();
+            joueur = joueur - attaque_value;
+            alert('Dégats de l\'attaque du monstre =' + attaque_value + '\nJoueur =' + joueur + '\nMonstre =' + monstre);
+            button_monstre.setAttribute("disabled", "false");
+            button_joueur.removeAttribute("disabled");
+            return joueur;
+        }
+
+        // fonction d'attaque qui sera déclenchée par le clic sur l'attaque du joueur 
+        // on passe la fonction créée random
+        // on enlève la valeur de cette fonction à la variable de score du monstre 
+        // on alerte le résultat dans une pop up
+        // on met un attribut disabled sur le bouton pour qu'on ne puisse pas jouer deux fois de suite 
+        // on enlève l'attribut disabled au monstre pour qu'il puisse jouer
+        
+
+        function attaque_du_joueur(){
+            random();
+            monstre = monstre - attaque_value;
+            alert('Dégats de l\'attaque du joueur =' + attaque_value + '\nJoueur =' + joueur + '\nMonstre =' + monstre);
+            button_joueur.setAttribute("disabled", "false");
+            button_monstre.removeAttribute("disabled");
+            return monstre;
+        }
+
+        // fonction qui permet de tester à chaque clic sur un des deux boutons si un des joueurs a perdu 
+        // si un des joueurs à 0 ou moins, on alert le nom du gagnant 
+
+        function test(){
+        if(monstre < 1){
+            alert('Le joueur a gagné !');
+        }
+        else if(joueur < 1){
+            alert('Le monstre a gagné !');
+        }
+        }   
+
+        // je stocke les éléments button joueur et monstre dans des variables
+
+        let button_monstre = document.getElementById('button_monstre');
+        let button_joueur = document.getElementById('button_joueur');
+
+        // on déclenche au clic sur le bouton la fonction attaque du monstre ou du joueur selon le bouton
+
+        button_monstre.addEventListener('click', attaque_du_monstre);
+        button_joueur.addEventListener('click', attaque_du_joueur);
+
+        // on déclenche au clic sur le bouton la fonction test 
+
+        button_monstre.addEventListener('click', test);
+        button_joueur.addEventListener('click', test);
+
+
+
+    </script>
+</body>
+</html>
