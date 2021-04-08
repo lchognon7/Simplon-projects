@@ -53,7 +53,7 @@
         function attaque_du_monstre(){
             random();
             joueur = joueur - attaque_value;
-            alert('Dégats de l\'attaque du monstre =' + attaque_value + '\nJoueur =' + joueur + '\nMonstre =' + monstre);
+            alert('Dégats de l\'attaque du monstre =' + attaque_value + '\nJoueur =' + joueur + '\nMonstre =' + monstre + '\nAu tour du joueur ...');
             button_monstre.setAttribute("disabled", "false");
             button_monstre.innerHTML = 'Attaquer 🛡';
             button_joueur.innerHTML = 'Attaquer 🪓';
@@ -72,7 +72,7 @@
         function attaque_du_joueur(){
             random();
             monstre = monstre - attaque_value;
-            alert('Dégats de l\'attaque du joueur =' + attaque_value + '\nJoueur =' + joueur + '\nMonstre =' + monstre);
+            alert('Dégats de l\'attaque du joueur =' + attaque_value + '\nJoueur =' + joueur + '\nMonstre =' + monstre + '\nAu tour du monstre ...');
             button_joueur.setAttribute("disabled", "false");
             button_joueur.innerHTML = 'Attaquer 🛡';
             button_monstre.innerHTML = 'Attaquer 🗡';
